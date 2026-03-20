@@ -1,19 +1,19 @@
 #!/usr/bin/env python3
 """
 ╔══════════════════════════════════════════════════════════════╗
-║  🐋 Cetdetektor v1.0 — Midgardsson OSINT Kit                ║
-║  Cetészlelések — GBIF Occurrence API (NO/IS/GL/FO)          ║
-║  Forrás: api.gbif.org | Licenc: CC BY 4.0                   ║
+║  🐋 WhaleFinder v1.0 — Midgardsson OSINT Kit                ║
+║  Cetovervåkning — GBIF Occurrence API (NO/IS/GL/FO)          ║
+║  Source: api.gbif.org | Licenc: CC BY 4.0                   ║
 ╚══════════════════════════════════════════════════════════════╝
 
-Használat:
-  python3 cetdetektor.py                        # utolsó 30 nap, NO+IS+GL+FO
-  python3 cetdetektor.py --days 90              # utolsó 90 nap
-  python3 cetdetektor.py --species orca         # csak orca
-  python3 cetdetektor.py --region nord          # Észak-Norvégia
-  python3 cetdetektor.py --countries NO IS      # egyedi országlista
-  python3 cetdetektor.py --lat 69.6 --lon 18.9 --radius 100  # koordináta alapú
-  python3 cetdetektor.py --save                 # napi JSON mentés data/ mappába
+usage:
+  python3 cetdetektor.py                        # last 30 day, NO+IS+GL+FO
+  python3 cetdetektor.py --days 90              # last 90 day
+  python3 cetdetektor.py --species orca         # only orca
+  python3 cetdetektor.py --region nord          # North-Norway
+  python3 cetdetektor.py --countries NO IS      # statelist
+  python3 cetdetektor.py --lat 69.6 --lon 18.9 --radius 100  #based on cordinates
+  python3 cetdetektor.py --save                 # json saving for the map, or other use
 """
 
 import argparse
