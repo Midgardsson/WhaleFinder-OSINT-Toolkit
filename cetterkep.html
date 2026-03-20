@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Cetdetektor — Nordatlantisk cetovervåkning</title>
+<title>WhaleFinder — Nordatlantisk cetovervåkning</title>
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css"/>
@@ -232,6 +232,22 @@ input[type=date]:focus { border-color:var(--ocean2); }
   cursor:zoom-in;
 }
 /* Reszponzív */
+@media (max-width: 768px) {
+  .main { flex-direction:column; }
+  .sidebar {
+    width:100%; height:auto; max-height:45vh;
+    border-right:none; border-bottom:1px solid var(--border);
+    flex-direction:row; overflow:hidden;
+  }
+  .sb-scroll { display:flex; flex-direction:row; overflow-x:auto; overflow-y:hidden; }
+  .sb-sec { min-width:200px; border-bottom:none; border-right:1px solid var(--border); flex-shrink:0; }
+  .list-hdr { display:none; }
+  .si-list { display:none; }
+  #map { min-height:55vh; }
+  .hdiv, .hsub { display:none; }
+  .hstats { gap:12px; }
+  .hs-v { font-size:0.9rem; }
+}
 @media (max-width: 480px) {
   header { padding:0 12px; height:48px; }
   .logo { font-size:1rem; }
@@ -272,27 +288,12 @@ input[type=date]:focus { border-color:var(--ocean2); }
     width: 100vw !important;
     height: calc(100vh - 54px);
     z-index: 999;
-    opacity: 0;
-    pointer-events: none;
-    transform: translateY(-20px);
-    transition: opacity 0.25s ease, transform 0.25s ease;
+    transform: translateY(-110%);
+    transition: transform 0.3s cubic-bezier(0.4,0,0.2,1);
     overflow-y: auto;
-    overflow-x: hidden;
     padding-bottom: 80px;
-    background: var(--paper) !important;
   }
-  .sidebar.open {
-    opacity: 1;
-    pointer-events: auto;
-    transform: translateY(0);
-  }
-  /* Sidebar scrollable content on mobile */
-  .sidebar .sb-scroll {
-    display: block !important;
-    overflow-y: auto;
-    overflow-x: hidden;
-    height: 100%;
-  }
+  .sidebar.open { transform: translateY(0); }
   .mobile-ok {
     display: flex !important;
     position: fixed;
@@ -351,7 +352,7 @@ input[type=date]:focus { border-color:var(--ocean2); }
 
 <div id="loading">
   <div class="lw">🐋</div>
-  <div class="lt">Cetdetektor</div>
+  <div class="lt">WhaleFinder</div>
   <div class="ls">Laster inn nordatlantiske observasjoner…</div>
 </div>
 
@@ -359,7 +360,7 @@ input[type=date]:focus { border-color:var(--ocean2); }
   <button class="hamburger" id="hamburger" onclick="toggleDrawer()" aria-label="Menu">
     <span></span><span></span><span></span>
   </button>
-  <div class="logo">🐋 Cet<em>detektor</em></div>
+  <div class="logo">🐋 Whale<em>Finder</em></div>
   <div class="hdiv"></div>
   <div class="hsub">Nordatlantisk cetovervåkning · GBIF CC BY 4.0</div>
   <div class="lang-sw"><button class="lang-btn active" onclick="setLang('no')">NO</button><button class="lang-btn" onclick="setLang('en')">EN</button></div>
