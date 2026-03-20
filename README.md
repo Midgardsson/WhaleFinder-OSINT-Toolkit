@@ -1,6 +1,6 @@
 # 🐋 WhaleFinder OSINT Toolkit
 
-**North Atlantic cetacean sighting intelligence — CLI collector + interactive map**
+***North Atlantic cetacean sighting intelligence — CLI collector + interactive map***
 
 Part of the [Midgardsson OSINT Kit](https://github.com/Midgardsson). Pulls verified whale and dolphin observation records from the GBIF Occurrence API, displays them in a terminal table, exports to JSON, and visualises the dataset on an interactive Leaflet map with species filtering, date range selection, country chips, and an experimental migration route overlay.
 
